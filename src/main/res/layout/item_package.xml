@@ -33,7 +33,7 @@
                 tools:src="@sample/packages.json/packages/image" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/item_package_local"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -72,7 +72,7 @@
                 tools:text="@sample/packages.json/packages/days" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/item_package_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
