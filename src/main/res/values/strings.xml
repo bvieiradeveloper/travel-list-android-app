@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Travel Dreams</string>
     <string name="head">Specials</string>
+    <string name="banner_content">banner</string>
+    <string name="country">Brazil</string>
 </resources>

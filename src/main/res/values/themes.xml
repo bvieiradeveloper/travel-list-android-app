@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.TravelDreams" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#7b1fa2</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -14,3 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 </resources>
+
+
+
