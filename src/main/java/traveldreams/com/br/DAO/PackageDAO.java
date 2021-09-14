@@ -1,11 +1,11 @@
-package traveldreams.com.br.ui.DAO;
+package traveldreams.com.br.DAO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import traveldreams.com.br.ui.Model.Package;
+import traveldreams.com.br.model.Package;
 
 public class PackageDAO {
     public List<Package> list() {

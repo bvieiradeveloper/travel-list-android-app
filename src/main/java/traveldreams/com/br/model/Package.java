@@ -1,4 +1,4 @@
-package traveldreams.com.br.ui.Model;
+package traveldreams.com.br.model;
 
 import java.math.BigDecimal;
 

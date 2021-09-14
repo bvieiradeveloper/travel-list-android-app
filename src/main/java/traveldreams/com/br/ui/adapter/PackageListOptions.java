@@ -1,24 +1,19 @@
 package traveldreams.com.br.ui.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
-
+import traveldreams.com.br.DAO.PackageDAO;
 import traveldreams.com.br.R;
-import traveldreams.com.br.ui.DAO.PackageDAO;
-import traveldreams.com.br.ui.activity.TravelPackageList;
+import traveldreams.com.br.util.CoinUtil;
+import traveldreams.com.br.util.DayUtil;
+import traveldreams.com.br.util.ResourceUtil;
 
 public class PackageListOptions extends BaseAdapter {
 
@@ -47,27 +42,40 @@ public class PackageListOptions extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup)
     {
+        View createdView = getView(viewGroup);
+        createLocal(position, createdView);
+        createDays(position, createdView);
+        createCoin(position, createdView);
+        createImage(position, createdView);
+        return createdView;
+    }
+
+    private View getView(ViewGroup viewGroup) {
         View createdView = LayoutInflater.from(context)
                 .inflate(R.layout.item_package, viewGroup, false);
+        return createdView;
+    }
 
-        TextView local = createdView.findViewById(R.id.item_package_local);
-        local.setText(packageDAO.list().get(position).getLocal());
+    private void createImage(int position, View createdView) {
+        ImageView image= createdView.findViewById(R.id.item_package_image_local);
+        Drawable imageResource = ResourceUtil.getDrawableResource(packageDAO.list().get(position).getImage(), context);
+        image.setImageDrawable(imageResource);
+    }
 
-        TextView days = createdView.findViewById(R.id.item_package_days);
-        int day = packageDAO.list().get(position).getDays();
-        days.setText( day == 1 ? day + " day" : day + " days");
-
-        NumberFormat currencyCoinFormat = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
-        String formattedPrice = currencyCoinFormat.format(packageDAO.list().get(position).getPrice()).replace("R$", "R$ ");
+    private void createCoin(int position, View createdView) {
+        String formattedPrice = CoinUtil.coinFormat(packageDAO.list().get(position).getPrice());
         TextView price = createdView.findViewById(R.id.item_package_price);
         price.setText(formattedPrice);
+    }
 
-        ImageView image= createdView.findViewById(R.id.item_package_image_local);
-        Resources resources = context.getResources();
-        int imageResourceId = resources.getIdentifier(packageDAO.list().get(position).getImage(), "drawable", context.getPackageName());
-        Drawable imageResource = resources.getDrawable(imageResourceId);
-        image.setImageDrawable(imageResource);
+    private void createDays(int position, View createdView) {
+        TextView days = createdView.findViewById(R.id.item_package_days);
+        String day = DayUtil.dayFormat(packageDAO.list().get(position).getDays());
+        days.setText(day);
+    }
 
-        return createdView;
+    private void createLocal(int position, View createdView) {
+        TextView local = createdView.findViewById(R.id.item_package_local);
+        local.setText(packageDAO.list().get(position).getLocal());
     }
 }
