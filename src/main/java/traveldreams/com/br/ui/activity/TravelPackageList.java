@@ -2,6 +2,7 @@ package traveldreams.com.br.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -21,5 +22,9 @@ public class TravelPackageList extends AppCompatActivity {
         ListView packageList = findViewById(R.id.package_list);
         PackageDAO packageDAO = new PackageDAO();
         packageList.setAdapter(new PackageListOptions(packageDAO,this));
+
+        Intent intent = new Intent(this, ResumePackageActivity.class);
+        startActivity(intent);
+
     }
 }

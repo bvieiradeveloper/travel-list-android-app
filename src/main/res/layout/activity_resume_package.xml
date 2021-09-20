@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/resume_package_local_image"
         android:layout_width="0dp"
         android:layout_height="140dp"
         android:scaleType="centerCrop"
@@ -20,7 +20,7 @@
         tools:srcCompat="@drawable/sao_paulo_sp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/resume_package_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,39 +29,39 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/resume_package_local_image"
         tools:text="São Paulo" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/resume_package_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/resume_package_local"
+        app:layout_constraintTop_toBottomOf="@+id/resume_package_local"
         tools:text="2 days" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/resume_package_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/resume_package_days"
+        app:layout_constraintTop_toBottomOf="@+id/resume_package_days"
         tools:text="08/12 - 10/12 de 2021" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/resume_package_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/resume_package_date"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="R$ 243.99" />
 
@@ -71,6 +71,22 @@
         android:layout_height="wrap_content"
         android:text="Final Price"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/textView4" />
+        app:layout_constraintBottom_toTopOf="@+id/resume_package_price"
+        app:layout_constraintEnd_toEndOf="@+id/resume_package_price" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/around_color_buttom"
+        android:text="FINISH PAYMENT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resume_package_local_image"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
