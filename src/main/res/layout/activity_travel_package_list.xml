@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="#7b1fa2" />
+        tools:srcCompat="@color/banner" />
 
     <TextView
         android:id="@+id/travel_package_banner_title"
