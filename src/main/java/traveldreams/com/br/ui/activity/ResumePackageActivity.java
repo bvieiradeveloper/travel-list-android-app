@@ -23,7 +23,7 @@ public class ResumePackageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_package);
 
-        final Package aPackage = new Package("São Paulo", "sao_paulo_sp", 2, BigDecimal.valueOf(243.99));
+        final Package aPackage = new Package("São Paulo", "sao_paulo_sp", 2,  new BigDecimal(243.99));
         Drawable drawableResource = ResourceUtil.getDrawableResource(aPackage.getImage(), this);
 
         ImageView localImage = findViewById(R.id.resume_package_local_image);
@@ -37,7 +37,7 @@ public class ResumePackageActivity extends AppCompatActivity {
         days.setText(formatedDay);
 
         String formatedPrice = CoinUtil.coinFormat(aPackage.getPrice());
-        TextView price = findViewById(R.id.item_package_price);
+        TextView price = findViewById(R.id.resume_package_price);
         price.setText(formatedPrice);
     }
 }

@@ -25,6 +25,5 @@ public class TravelPackageList extends AppCompatActivity {
 
         Intent intent = new Intent(this, ResumePackageActivity.class);
         startActivity(intent);
-
     }
 }
