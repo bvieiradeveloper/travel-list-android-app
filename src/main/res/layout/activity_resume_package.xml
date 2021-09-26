@@ -45,25 +45,29 @@
 
     <TextView
         android:id="@+id/resume_package_date"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toStartOf="@id/resume_package_price"
         app:layout_constraintStart_toStartOf="@+id/resume_package_days"
         app:layout_constraintTop_toBottomOf="@+id/resume_package_days"
         tools:text="08/12 - 10/12 de 2021" />
 
     <TextView
         android:id="@+id/resume_package_price"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:gravity="end"
         android:text="TextView"
+        android:textAlignment="textEnd"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/resume_package_date"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="R$ 243.99" />
+        app:layout_constraintStart_toEndOf="@id/resume_package_date" />
 
     <TextView
         android:id="@+id/textView5"
