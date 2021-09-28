@@ -8,6 +8,12 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.TravelDreams">
         <activity
+            android:name=".ui.activity.SummaryCompareActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.PaymentActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.activity.ResumePackageActivity"
             android:exported="true" />
         <activity

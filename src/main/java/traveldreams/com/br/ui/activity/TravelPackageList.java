@@ -23,7 +23,7 @@ public class TravelPackageList extends AppCompatActivity {
         PackageDAO packageDAO = new PackageDAO();
         packageList.setAdapter(new PackageListOptions(packageDAO,this));
 
-        Intent intent = new Intent(this, ResumePackageActivity.class);
+        Intent intent = new Intent(this, PaymentActivity.class);
         startActivity(intent);
     }
 }

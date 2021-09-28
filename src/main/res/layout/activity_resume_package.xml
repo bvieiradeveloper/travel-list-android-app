@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.ResumePackageActivity">
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -17,14 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/sao_paulo_sp" />
+        tools:srcCompat="@drawable/sao_paulo_sp"
+        android:contentDescription="@string/local_image" />
 
     <TextView
         android:id="@+id/resume_package_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -88,6 +87,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/around_color_buttom"
         android:text="FINISH PAYMENT"
+        android:textColor="#4E342E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
