@@ -99,8 +99,22 @@
         app:layout_constraintStart_toEndOf="@+id/credit_card_year"
         app:layout_constraintTop_toBottomOf="@+id/credit_card_number" />
 
+    <EditText
+        android:id="@+id/credit_card_name"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:digits="@string/card_name_mask"
+        android:ems="10"
+        android:hint="Card Name"
+        android:inputType="text"
+        android:maxLength="12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/credit_card_cvc"/>
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/finish_payment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -108,6 +122,6 @@
         android:text="Finish Payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/credit_card_year" />
+        app:layout_constraintTop_toBottomOf="@+id/credit_card_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,5 @@
     <string name="country">Brazil</string>
     <string name="local_image">local image</string>
     <string name="credit_card_payment_message">Type in the credit card information you want to use to make the payment</string>
+    <string name="card_name_mask">abcdefghijklmnopqrstuvxzwy\u0020</string>
 </resources>
