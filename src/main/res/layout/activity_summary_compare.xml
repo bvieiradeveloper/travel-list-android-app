@@ -56,8 +56,7 @@
         android:layout_margin="8dp"
         android:textAlignment="center"
         android:gravity="center"
-        android:textSize="14sp
-"
+        android:textSize="14sp"
         android:text="Purchase Resume Verify:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,15 +1,17 @@
 package traveldreams.com.br.ui.activity;
 
+import static traveldreams.com.br.model.PackageConst.PACKAGE_KEY;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import traveldreams.com.br.R;
 import traveldreams.com.br.model.Package;
@@ -20,28 +22,45 @@ import traveldreams.com.br.util.ResourceUtil;
 
 public class ResumePackageActivity extends AppCompatActivity {
 
+    public static final String APP_BAR = "Package Resume";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_package);
 
-        setTitle("Package Resume");
+        setTitle(APP_BAR);
 
-        final Package aPackage = new Package("São Paulo", "sao_paulo_sp", 2,  new BigDecimal(243.99));
+        Intent intent = getIntent();
+        if(intent.hasExtra(PACKAGE_KEY)) {
+            Package aPackage = (Package) intent.getSerializableExtra(PACKAGE_KEY);
+            LoadIntent(aPackage);
+            btnConfig(aPackage);
+        }
+    }
 
-        String imageName = aPackage.getImage();
-        LoadImage(imageName);
+    private void LoadIntent(Package aPackage) {
 
-        String localName = aPackage.getLocal();
-        loadLocal(localName);
+            String imageName = aPackage.getImage();
+            String localName = aPackage.getLocal();
+            int countDay = aPackage.getDays();
+            BigDecimal tripPrice = aPackage.getPrice();
 
-        int countDay = aPackage.getDays();
-        loadNumberOfDays(countDay);
+            LoadImage(imageName);
+            loadLocal(localName);
+            loadNumberOfDays(countDay);
+            loadPrice(countDay, tripPrice);
+            loadTripRoundDate(countDay);
+    }
 
-        BigDecimal tripPrice = aPackage.getPrice();
-        loadPrice(countDay, tripPrice);
-
-        loadTripRoundDate(countDay);
+    private void btnConfig(Package aPackage) {
+        Button paymentDetails = findViewById(R.id.payment_details);
+        paymentDetails.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(ResumePackageActivity.this, PaymentActivity.class);
+            intent.putExtra(PACKAGE_KEY, aPackage);
+            startActivity(intent);
+        });
     }
 
     private void loadTripRoundDate(int days)

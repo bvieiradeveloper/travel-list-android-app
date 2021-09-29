@@ -1,8 +1,9 @@
 package traveldreams.com.br.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Package {
+public class Package implements Serializable {
     private final String local;
     private final String image;
     private final int days;

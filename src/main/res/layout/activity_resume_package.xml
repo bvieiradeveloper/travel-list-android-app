@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="@+id/resume_package_price" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/payment_details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
