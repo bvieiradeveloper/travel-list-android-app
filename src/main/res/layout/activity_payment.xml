@@ -105,7 +105,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:digits="@string/card_name_mask"
-        android:ems="10"
         android:hint="Card Name"
         android:inputType="text"
         android:maxLength="12"

@@ -10,14 +10,13 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/holo_orange_dark" />
+        tools:srcCompat="@android:color/holo_orange_dark" />
 
     <TextView
         android:id="@+id/textView4"
@@ -63,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/trip_place_image"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
@@ -76,32 +75,32 @@
         app:srcCompat="@drawable/sao_paulo_sp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/trip_local_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="São Paulo"
         android:textSize="14sp"
         android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/trip_place_image" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/trip_round_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         tools:text="08/12 - 10/12 de 2021"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/trip_local_name"
+        app:layout_constraintTop_toBottomOf="@+id/trip_local_name" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/trip_price_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="R$ 243,99"
         android:textSize="14sp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/trip_round_data"
+        app:layout_constraintTop_toBottomOf="@+id/trip_round_data" />
 </androidx.constraintlayout.widget.ConstraintLayout>

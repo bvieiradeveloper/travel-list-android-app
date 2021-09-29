@@ -34,8 +34,6 @@ public class PaymentActivity extends AppCompatActivity {
             price.setText(formattedPrice);
             btnConfig(aPackage);
         }
-
-
     }
 
     private void btnConfig(Package aPackage) {
@@ -43,7 +41,7 @@ public class PaymentActivity extends AppCompatActivity {
         finishPurchase.setOnClickListener(view ->
         {
             Intent intent = new Intent(PaymentActivity.this,SummaryCompareActivity.class);
-            intent.putExtra(PACKAGE_KEY,aPackage);
+            intent.putExtra(PACKAGE_KEY, aPackage);
             startActivity(intent);
         });
     }
