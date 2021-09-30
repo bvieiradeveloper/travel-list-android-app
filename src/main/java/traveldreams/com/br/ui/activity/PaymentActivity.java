@@ -2,14 +2,12 @@ package traveldreams.com.br.ui.activity;
 
 import static traveldreams.com.br.model.PackageConst.PACKAGE_KEY;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.Serializable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import traveldreams.com.br.R;
 import traveldreams.com.br.model.Package;
@@ -26,8 +24,11 @@ public class PaymentActivity extends AppCompatActivity {
         setTitle(APP_BAR_PAYMENT);
 
         Intent intent = getIntent();
-        if(intent.hasExtra(PACKAGE_KEY))
-        {
+        loadResources(intent);
+    }
+
+    private void loadResources(Intent intent) {
+        if (intent.hasExtra(PACKAGE_KEY)) {
             Package aPackage = (Package) intent.getSerializableExtra(PACKAGE_KEY);
             String formattedPrice = CoinUtil.coinFormat(aPackage.getPrice());
             TextView price = findViewById(R.id.trip_price);
@@ -40,7 +41,7 @@ public class PaymentActivity extends AppCompatActivity {
         Button finishPurchase = findViewById(R.id.finish_payment);
         finishPurchase.setOnClickListener(view ->
         {
-            Intent intent = new Intent(PaymentActivity.this,SummaryCompareActivity.class);
+            Intent intent = new Intent(PaymentActivity.this, SummaryCompareActivity.class);
             intent.putExtra(PACKAGE_KEY, aPackage);
             startActivity(intent);
         });

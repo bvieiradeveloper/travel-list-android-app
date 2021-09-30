@@ -3,16 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.PaymentActivity">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/payment_orientation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:gravity="center"
         android:text="@string/credit_card_payment_message"
         android:textSize="14sp"
@@ -22,15 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/purchase_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
+        android:text="@string/purchase_amount"
         android:textSize="14sp"
-        android:text="purchase amount:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/payment_orientation" />
 
     <TextView
         android:id="@+id/trip_price"
@@ -39,9 +36,9 @@
         android:layout_marginTop="8dp"
         android:textColor="@android:color/holo_green_light"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:text="R$ 421,50" />
+        app:layout_constraintStart_toStartOf="@+id/purchase_amount"
+        app:layout_constraintTop_toBottomOf="@+id/purchase_amount"
+        tools:text="@string/test_trip_price" />
 
     <EditText
         android:id="@+id/credit_card_number"
@@ -49,8 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Card Number"
+        android:hint="@string/card_number"
         android:inputType="number"
         android:maxLength="12"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,33 +60,33 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center"
-        android:hint="MM"
-        app:layout_constraintTop_toBottomOf="@id/credit_card_number"
-        app:layout_constraintStart_toStartOf="@id/credit_card_number"
-        app:layout_constraintBottom_toBottomOf="@id/credit_card_cvc"
+        android:hint="@string/mm"
         android:inputType="number"
-        android:maxLength="2"/>
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@id/credit_card_cvc"
+        app:layout_constraintStart_toStartOf="@id/credit_card_number"
+        app:layout_constraintTop_toBottomOf="@id/credit_card_number" />
+
     <EditText
         android:id="@+id/credit_card_year"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:hint="AA"
-        app:layout_constraintTop_toBottomOf="@id/credit_card_number"
-        app:layout_constraintStart_toEndOf="@id/credit_card_month"
-        app:layout_constraintBottom_toBottomOf="@id/credit_card_cvc"
+        android:hint="@string/aa"
         android:inputType="number"
-        android:maxLength="2"/>
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@id/credit_card_cvc"
+        app:layout_constraintStart_toEndOf="@id/credit_card_month"
+        app:layout_constraintTop_toBottomOf="@id/credit_card_number" />
 
     <EditText
         android:id="@+id/credit_card_cvc"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_cvc_cartao_de_credito"
-        android:gravity="center"
         android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_cvc_credit_card"
+        android:gravity="center"
         android:hint="CVC"
         android:inputType="number"
         android:maxLength="3"
@@ -101,23 +97,23 @@
 
     <EditText
         android:id="@+id/credit_card_name"
-        android:layout_margin="8dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:digits="@string/card_name_mask"
-        android:hint="Card Name"
+        android:hint="@string/card_name"
         android:inputType="text"
         android:maxLength="12"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/credit_card_cvc"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/credit_card_cvc" />
 
     <Button
         android:id="@+id/finish_payment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="@drawable/around_color_buttom"
+        android:background="@drawable/around_color"
         android:text="Finish Payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -2,14 +2,14 @@ package traveldreams.com.br.ui.activity;
 
 import static traveldreams.com.br.model.PackageConst.PACKAGE_KEY;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.BigDecimal;
 
@@ -28,11 +28,14 @@ public class ResumePackageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume_package);
-
         setTitle(APP_BAR);
 
         Intent intent = getIntent();
-        if(intent.hasExtra(PACKAGE_KEY)) {
+        loadResources(intent);
+    }
+
+    private void loadResources(Intent intent) {
+        if (intent.hasExtra(PACKAGE_KEY)) {
             Package aPackage = (Package) intent.getSerializableExtra(PACKAGE_KEY);
             LoadIntent(aPackage);
             btnConfig(aPackage);
@@ -41,16 +44,11 @@ public class ResumePackageActivity extends AppCompatActivity {
 
     private void LoadIntent(Package aPackage) {
 
-            String imageName = aPackage.getImage();
-            String localName = aPackage.getLocal();
-            int countDay = aPackage.getDays();
-            BigDecimal tripPrice = aPackage.getPrice();
-
-            LoadImage(imageName);
-            loadLocal(localName);
-            loadNumberOfDays(countDay);
-            loadPrice(countDay, tripPrice);
-            loadTripRoundDate(countDay);
+        LoadImage(aPackage.getImage());
+        loadLocal(aPackage.getLocal());
+        loadNumberOfDays(aPackage.getDays());
+        loadPrice(aPackage.getDays(), aPackage.getPrice());
+        loadTripRoundDate(aPackage.getDays());
     }
 
     private void btnConfig(Package aPackage) {
@@ -63,22 +61,22 @@ public class ResumePackageActivity extends AppCompatActivity {
         });
     }
 
-    private void loadTripRoundDate(int days)
-    {
-        String RoundTrip  = DataUtil.DateRoundInString(days);
+    private void loadTripRoundDate(int days) {
+        String RoundTrip = DataUtil.DateRoundInString(days);
         TextView tripDuration = findViewById(R.id.resume_package_date);
         tripDuration.setText(RoundTrip);
     }
+
     private void loadPrice(int days, BigDecimal tripPrice) {
-        String formatedPrice = CoinUtil.coinFormat(tripPrice);
+        String formattedPrice = CoinUtil.coinFormat(tripPrice);
         TextView price = findViewById(R.id.resume_package_price);
-        price.setText(formatedPrice);
+        price.setText(formattedPrice);
     }
 
-    private void loadNumberOfDays(int countday) {
-        String formatedDay = DayUtil.dayFormat(countday);
+    private void loadNumberOfDays(int countDay) {
+        String formattedDay = DayUtil.dayFormat(countDay);
         TextView days = findViewById(R.id.resume_package_days);
-        days.setText(formatedDay);
+        days.setText(formattedDay);
     }
 
     private void loadLocal(String localName) {

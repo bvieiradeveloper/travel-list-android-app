@@ -2,14 +2,14 @@ package traveldreams.com.br.ui.activity;
 
 import static traveldreams.com.br.model.PackageConst.PACKAGE_KEY;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import traveldreams.com.br.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import traveldreams.com.br.DAO.PackageDAO;
+import traveldreams.com.br.R;
 import traveldreams.com.br.model.Package;
 import traveldreams.com.br.ui.adapter.PackageListOptions;
 
@@ -28,7 +28,7 @@ public class TravelPackageList extends AppCompatActivity {
     private void listConfig() {
         ListView packageList = findViewById(R.id.package_list);
         final PackageDAO packageDAO = new PackageDAO();
-        packageList.setAdapter(new PackageListOptions(packageDAO,this));
+        packageList.setAdapter(new PackageListOptions(packageDAO, this));
 
         packageList.setOnItemClickListener((adapterView, view, position, id) ->
         {

@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.SummaryCompareActivity">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/payment_congratulations_bar"
         android:layout_width="0dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,50 +15,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@android:color/holo_orange_dark" />
+        app:srcCompat="@android:color/holo_orange_dark" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/trip_congratulations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
-        android:text="Congratulations"
+        android:text="@string/congratulations"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_congratulations_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/payment_congratulations_bar"
+        app:layout_constraintTop_toTopOf="@+id/payment_congratulations_bar"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/trip_congratulations_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="successful purchase :)"
-        android:textSize="18dp"
-        android:textAlignment="center"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:text="@string/successful_purchase"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_congratulations_bar"
+        app:layout_constraintEnd_toEndOf="@+id/trip_congratulations"
+        app:layout_constraintStart_toStartOf="@+id/trip_congratulations"
+        app:layout_constraintTop_toBottomOf="@+id/trip_congratulations" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/resume_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:textAlignment="center"
         android:gravity="center"
+        android:text="@string/purchase_resume_verify"
+        android:textAlignment="center"
         android:textSize="14sp"
-        android:text="Purchase Resume Verify:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/payment_congratulations_bar" />
 
     <ImageView
         android:id="@+id/trip_place_image"
@@ -70,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/resume_bar"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sao_paulo_sp" />
 
@@ -78,29 +77,29 @@
         android:id="@+id/trip_local_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="São Paulo"
-        android:textSize="14sp"
         android:layout_margin="8dp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trip_place_image" />
+        app:layout_constraintTop_toBottomOf="@+id/trip_place_image"
+        tools:text="@string/test_local_name" />
 
     <TextView
         android:id="@+id/trip_round_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:text="08/12 - 10/12 de 2021"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/trip_local_name"
-        app:layout_constraintTop_toBottomOf="@+id/trip_local_name" />
+        app:layout_constraintTop_toBottomOf="@+id/trip_local_name"
+        tools:text="@string/test_round_trip" />
 
     <TextView
         android:id="@+id/trip_price_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="R$ 243,99"
-        android:textSize="14sp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/trip_round_data"
-        app:layout_constraintTop_toBottomOf="@+id/trip_round_data" />
+        app:layout_constraintTop_toBottomOf="@+id/trip_round_data"
+        tools:text="@string/test_trip_price" />
 </androidx.constraintlayout.widget.ConstraintLayout>

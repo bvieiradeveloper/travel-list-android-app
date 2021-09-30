@@ -9,7 +9,8 @@
         android:theme="@style/Theme.TravelDreams">
         <activity
             android:name=".ui.activity.SummaryCompareActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ui.activity.TravelPackageList"/>
         <activity
             android:name=".ui.activity.PaymentActivity"
             android:exported="true" />
